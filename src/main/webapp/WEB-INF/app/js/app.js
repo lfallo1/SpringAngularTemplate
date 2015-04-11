@@ -14,10 +14,10 @@
     		pageTitle : 'Welcome Page'
     	});
     	
-    	$routeProvider.when('/About', {
-    		templateUrl : 'About',
-    		controller : 'AboutCtrl',
-    		pageTitle : 'About Page'
+    	$routeProvider.when('/Users', {
+    		templateUrl : 'Users',
+    		controller : 'UsersCtrl',
+    		pageTitle : 'User Page'
     	});    	
 
         $routeProvider.otherwise({

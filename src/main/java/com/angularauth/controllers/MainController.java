@@ -16,8 +16,8 @@ public class MainController {
         return "Welcome";
     }    
     
-    @RequestMapping(value="/About", method=RequestMethod.GET)
-    public final String aboutGet(){
-        return "About";
+    @RequestMapping(value="/Users", method=RequestMethod.GET)
+    public final String usersGet(){
+        return "Users";
     }    
 }

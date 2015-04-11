@@ -1,0 +1,26 @@
+<div class="modal-header">
+	<div class="modal-title">
+		<h3>Posts for {{user.name}}</h3>
+	</div>
+</div>
+<div class="modal-body">
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="post in posts">
+			<span ng-show="!editing[$index]">
+				<strong>{{post.title}}</strong> <small>{{post.body}}</small>
+				<button ng-click="openEditPost($index)">
+					<span class="glyphicon glyphicon-edit"></span>
+				</button>
+			</span>
+			<span ng-show="editing[$index]">
+				<label for="body">Title</label><input class="form-control" type="text" ng-model="post.title" />
+				<label for="body">Body</label><input clas="form-control" type="text" ng-model="post.body" />
+				<button ng-click="closeEditPost($index)" class="btn btn-success">Done Editing</button>				
+			</span>
+		</li>
+	</ul>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-success" ng-click="okay()">Okay</button>
+	<button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+</div>

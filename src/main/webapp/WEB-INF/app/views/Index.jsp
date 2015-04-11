@@ -17,17 +17,21 @@
     <script src="bower/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js" type="text/javascript"></script>
     
     <!-- Modules -->
-    <script src="app/js/app.js" type="text/javascript"></script>
-    <script src="app/js/controllers.js" type="text/javascript"></script>
+    <script src="app/js/App.js" type="text/javascript"></script>
+    <script src="app/js/Controllers.js" type="text/javascript"></script>
     
     <!-- Controllers -->
     <script src="app/js/controllers/RouteChangeCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/WelcomeCtrl.js" type="text/javascript"></script>
-    <script src="app/js/controllers/AboutCtrl.js" type="text/javascript"></script>
+    <script src="app/js/controllers/UsersCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/directiveControllers/NavbarCtrl.js" type="text/javascript"></script>
+    <script src="app/js/controllers/directiveControllers/DatepickerPopupCustomCtrl.js" type="text/javascript"></script>
+    <script src="app/js/controllers/modalControllers/InfoModalCtrl.js" type="text/javascript"></script>
+    <script src="app/js/controllers/modalControllers/UserPostsModalCtrl.js" type="text/javascript"></script>
 
 	<!-- Directives -->
     <script src="app/js/directives/Navbar.js" type="text/javascript"></script>
+    <script src="app/js/directives/DatepickerPopupCustom.js" type="text/javascript"></script>
     
     <!-- CSS libs -->
     <link type="text/css" rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css" />
@@ -42,6 +46,6 @@
     <div ng-view></div>
 </div>
 <hr>
-<div class="footer"><h3>Footer Placeholder</h3></div>
+<footer><h3>Footer Placeholder</h3></footer>
 </body>
 </html>
