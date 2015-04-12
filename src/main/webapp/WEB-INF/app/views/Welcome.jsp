@@ -41,6 +41,8 @@
 	<div ng-class="{{deferredResultClass}}">{{deferredResult}}</div>
 </div>
 <hr>
-<!-- Date stuff (should eventually move this section into its own directive) -->
 <dir-datepicker-popup-custom dt="dt"></dir-datepicker-popup-custom>
-<pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+<hr>
+
+<dir-captain-justice-carousel images="captainJusticeImages" path="basePath"></dir-captain-justice-carousel>

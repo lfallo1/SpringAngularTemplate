@@ -18,7 +18,9 @@
     
     <!-- Modules -->
     <script src="app/js/App.js" type="text/javascript"></script>
+    <script src="app/js/Factories.js" type="text/javascript"></script>
     <script src="app/js/Controllers.js" type="text/javascript"></script>
+    <script src="app/js/HttpServices.js" type="text/javascript"></script>
     
     <!-- Controllers -->
     <script src="app/js/controllers/RouteChangeCtrl.js" type="text/javascript"></script>
@@ -26,12 +28,18 @@
     <script src="app/js/controllers/UsersCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/directiveControllers/NavbarCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/directiveControllers/DatepickerPopupCustomCtrl.js" type="text/javascript"></script>
+    <script src="app/js/controllers/directiveControllers/CaptainJusticeCarouselCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/modalControllers/InfoModalCtrl.js" type="text/javascript"></script>
     <script src="app/js/controllers/modalControllers/UserPostsModalCtrl.js" type="text/javascript"></script>
 
 	<!-- Directives -->
     <script src="app/js/directives/Navbar.js" type="text/javascript"></script>
     <script src="app/js/directives/DatepickerPopupCustom.js" type="text/javascript"></script>
+    <script src="app/js/directives/CaptainJusticeCarousel.js" type="text/javascript"></script>
+    
+    <!-- Services/Factories -->
+    <script src="app/js/services/ImageFactory.js" type="text/javascript"></script>
+    <script src="app/js/services/UserPostsService.js" type="text/javascript"></script>
     
     <!-- CSS libs -->
     <link type="text/css" rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css" />

@@ -1,0 +1,12 @@
+<input type="text" ng-model="interval" />
+<button ng-show="interval > 0" class="btn btn-danger" ng-click="pause()">Pause</button>
+<button ng-show="interval <= 0" class="btn btn-primary" ng-click="resume()">Resume</button>
+<carousel interval="interval">
+    <slide ng-repeat="image in images">
+	    <img ng-src="{{path + image.img}}" style="margin:auto;">
+	    <div class="carousel-caption">
+	    	<strong>{{image.type}}</strong>
+	    	<p>{{image.text}}</p>
+	    </div>	    
+    </slide>
+</carousel>

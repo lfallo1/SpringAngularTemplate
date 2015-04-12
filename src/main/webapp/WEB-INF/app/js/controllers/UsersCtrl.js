@@ -1,22 +1,20 @@
 (function(){
-	angular.module('app.controllers').controller('UsersCtrl', ['$scope', '$location', '$timeout', '$q', '$http', '$modal', 
-                 function($scope, $location, $timeout, $q, $http, $modal) {
+	angular.module('app.controllers').controller('UsersCtrl', ['$scope', '$location', '$timeout', '$q', '$http', '$modal', 'UserPostsService', 
+                 function($scope, $location, $timeout, $q, $http, $modal, UserPostsService) {
 		
 		//public variables
 		$scope.aboutMessage = "User Info Page";
 		$scope.loadingUsers = true;
 		
-		//private variables
-		var userPromise = $http.get('http://jsonplaceholder.typicode.com/users');
-		var postsPromise = $http.get('http://jsonplaceholder.typicode.com/posts');
-		var userAndPostPromises = $q.all([userPromise, postsPromise]);
+		var userAndPostPromises = $q.all([UserPostsService.getUsers(), UserPostsService.getPosts()]);
 		
 		//wait for both user & posts promises to complete, then handle
-		userAndPostPromises.then(function(result){
+		userAndPostPromises.then(function(data){
 			$scope.error = false;
-			$scope.users = result[0].data;
+			$scope.users = data[0];
+			var posts = data[1];
 			for(var i = 0; i < $scope.users.length; i++){
-				$scope.users[i].posts = result[1].data.filter(function(d){
+				$scope.users[i].posts = posts.filter(function(d){
 					if(d.userId === $scope.users[i].id){
 						return d;
 					}
@@ -24,7 +22,7 @@
 			}
 			$scope.loadingUsers = false
 		}, function(err){
-			$scope.error = 'Unable to retrieve data from ' + err.config.url;
+			$scope.error = 'Unable to retrieve data from ' + err.reason.config.url;
 			$scope.loadingUsers = false
 		});
 		
@@ -34,7 +32,7 @@
 				controller: 'UserPostsModalCtrl',
 				resolve : {
 					posts : function(){
-						return angular.copy(user.posts); //pass a copy of the posts, so editing is not saved until user clicks accept
+						return angular.copy(user.posts); //pass a copy of the posts, so editing is not saved until user clicks save inside the modal
 					},
 					user : function(){
 						return user;

@@ -1,6 +1,6 @@
 (function(){
-	angular.module('app.controllers').controller('WelcomeCtrl', ['$scope', '$location', '$modal', '$http', '$q', 
-	            function($scope, $location, $modal, $http, $q) {
+	angular.module('app.controllers').controller('WelcomeCtrl', ['$scope', '$location', '$modal', '$http', '$q', 'CaptainJusticeImages',
+	            function($scope, $location, $modal, $http, $q, CaptainJusticeImages) {
 		
 		//private variables
 		var deferred = $q.defer();
@@ -60,8 +60,6 @@
 				console.log(data);
 			}, function(err){
 				console.log(err);
-			}, function(){
-				console.log('Whats this?');
 			});
 		};
 		
@@ -88,11 +86,14 @@
 			});
 		};
 		
+		
 		$scope._onLoad = function(){
 			$scope.num1 = generateRand();
 			$scope.num2 = generateRand();
 			$scope.answer = 0;
-		}
+			$scope.basePath = CaptainJusticeImages.getPath();
+			$scope.captainJusticeImages = CaptainJusticeImages.getImages();
+		};
 		
 		$scope._onLoad();
 		
